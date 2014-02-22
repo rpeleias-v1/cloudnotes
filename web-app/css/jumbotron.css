@@ -1,0 +1,22 @@
+body {
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+
+footer {
+	text-align: center;
+}
+
+.starter-template {
+	text-align: center;
+}
+
+.buttons-area {
+	text-align: center;
+	margin-top: 1%;
+}
+
+.input-group {
+	width: auto;
+	margin: auto;
+}
