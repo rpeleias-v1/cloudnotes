@@ -11,6 +11,13 @@ hibernate {
 }
 // environment specific settings
 environments {
+    grails {
+      mongo {
+        hostname = 'localhost'
+        port = 27017
+        databaseName = 'cloudNotes'
+      }
+    }
     development {
         dataSource {
             dbCreate = "create-drop" // one of 'create', 'create-drop', 'update', 'validate', ''

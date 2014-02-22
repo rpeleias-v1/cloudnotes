@@ -22,10 +22,8 @@
 		<h2> Type your notes below:</h2>
 		<p>Type everything you want. Access anywhere. Always get it!</p>
 		<div class="input-group ">			
-			<g:textArea cols="150" rows="16" name="note" class="form-control pull-left" onkeyup="${remoteFunction(action: 'updateNote', controller: 'note', update: 'exemplo')}"/>							
-		</div>	
-		<div id="exemplo" >
-		</div>	
+			<g:textArea cols="150" rows="16" name="noteArea" value="${note.content}" class="form-control pull-left" onkeyup="${remoteFunction(action: 'updateNote', controller: 'note', update: 'noteArea', params: '\'content=\' + this.value')}"/>							
+		</div>			
 	</div>
 
 	<div class="buttons-area">
