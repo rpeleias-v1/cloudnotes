@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
    <head>        	  
-      <r:require modules="bootstrap, custom"/>
+      <r:require modules="bootstrap, custom"/>      
       <g:layoutTitle/>
       <r:layoutResources/>
    </head>
@@ -13,8 +13,8 @@
 			</div>
 			<div class="collapse navbar-collapse">
 				<ul class="nav navbar-nav">
-					<li><a href="#">Source Code</a></li>	
-					<li><a href="#">Contact Me</a></li>			
+					<li><a href="https://github.com/rpeleias/cloudnotes" target="_blank">Source Code</a></li>	
+					<li><g:link action="contact" controller="contact">Contact Me</g:link></li>			
 				</ul>
 			</div>
 		</div>

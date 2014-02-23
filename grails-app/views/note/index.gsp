@@ -1,7 +1,7 @@
 <html>
    <head>
       <meta name="layout" content="main"/>
-     
+      <g:javascript library="application" /> 
    </head>
 <body>	
 	
@@ -14,14 +14,17 @@
 	</div>
 
 	<div class="buttons-area">
-		<g:submitButton id="cleanButton" name="Clean" class="btn btn-lg btn-info" >Clean</g:submitButton>	
-		<g:remoteLink class="btn btn-lg btn-info" >Change ID</g:remoteLink>	
+		<g:submitButton id="cleanButton" name="Clean" class="btn btn-lg btn-info" >Clean</g:submitButton>			
+		<g:remoteLink id="changeIdButton" class="btn btn-lg btn-info" >Change ID</g:remoteLink>	
 	</div>	
+
+	<div id="changeIdTemplate">
+	</div>
 	
 	<r:script>
 		$('#cleanButton').click(function() {
 			document.getElementById('noteArea').value = ""; return false;
-		});
+		});		
 	</r:script>
 	
 </body>
