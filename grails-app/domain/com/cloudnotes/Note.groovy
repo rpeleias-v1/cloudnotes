@@ -9,5 +9,10 @@ class Note {
 
     static constraints = {
     	userCode blank: false, nullable: false, unique: true
+    	content nullable: true    	
+    }
+
+    static mapping =  {
+    	version false
     }
 }

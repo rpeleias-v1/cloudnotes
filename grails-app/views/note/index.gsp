@@ -9,7 +9,7 @@
 		<h2> Type your notes below:</h2>
 		<p>Type everything you want. Access anywhere. Always get it!</p>
 		<div class="input-group ">			
-			<g:textArea cols="150" rows="16" name="noteArea" value="${note.content}" class="form-control pull-left" onkeyup="${remoteFunction(action: 'updateNote', controller: 'note', update: 'noteArea', , id:"${note.userCode}",params: '\'content=\' + this.value')}"/>							
+			<g:textArea cols="150" rows="16" name="noteArea" value="${note.content}" class="form-control pull-left" onkeyup="${remoteFunction(action: 'updateNote', controller: 'note', update: 'noteArea', id:"${note.userCode}",params: '\'content=\' + this.value')}"/>							
 		</div>			
 	</div>
 

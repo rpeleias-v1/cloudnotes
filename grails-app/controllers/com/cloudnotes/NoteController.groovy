@@ -1,19 +1,32 @@
 package com.cloudnotes
 
+import org.apache.commons.lang.RandomStringUtils
+
 class NoteController {
 
-    def index() { 
-    	println params.code
+    def index() {     	
     	if (params.code == null) {
-    		params.code = "teste"
-    	}    	
-    	Note note = Note.findByUserCode(params.code)
-    	if (!note) {
-    		note = new Note(userCode: params.code)
-    		println note.save()	
-    	}    
-    	[note: note]	
-    	
+            createRandomStrings()
+            redirect(uri: "/${params.code}", controller: 'note', action: 'index')
+    	}    	       
+    	def note = saveNotes()
+    	[note: note]	    	
+    }
+
+    def createRandomStrings() {
+        int randomStringLength = 8
+        String charset = (('a'..'z') + ('A'..'Z') + ('0'..'9')).join()
+        String randomString = RandomStringUtils.random(randomStringLength, charset.toCharArray())
+        params.code = randomString        
+    }
+
+    def saveNotes() {
+        Note note = Note.findByUserCode(params.code)
+        if (!note) {            
+            note = new Note(userCode: params.code)               
+            note.save(flush: true)  
+        }    
+        return note
     }
 
     def updateNote() {    	
