@@ -10,41 +10,32 @@ hibernate {
     cache.region.factory_class = 'net.sf.ehcache.hibernate.EhCacheRegionFactory'
 }
 // environment specific settings
-environments {
-    grails {
-      mongo {
-        hostname = 'localhost'
-        port = 27017
-        databaseName = 'cloudNotes'
+environments {    
+    development {
+      grails {
+        mongo {
+          hostname = 'localhost'
+          port = 27017
+          databaseName = 'cloudnotes'
+        }
       }
     }
-    development {
-        dataSource {
-            dbCreate = "create-drop" // one of 'create', 'create-drop', 'update', 'validate', ''
-            url = "jdbc:h2:mem:devDb;MVCC=TRUE;LOCK_TIMEOUT=10000"
-        }
-    }
     test {
-        dataSource {
-            dbCreate = "update"
-            url = "jdbc:h2:mem:testDb;MVCC=TRUE;LOCK_TIMEOUT=10000"
+      grails {
+        mongo {
+          hostname = 'localhost'
+          port = 27017
+          databaseName = 'cloudnotes'
         }
+      }
     }
     production {
-        dataSource {
-            dbCreate = "update"
-            url = "jdbc:h2:prodDb;MVCC=TRUE;LOCK_TIMEOUT=10000"
-            pooled = true
-            properties {
-               maxActive = -1
-               minEvictableIdleTimeMillis=1800000
-               timeBetweenEvictionRunsMillis=1800000
-               numTestsPerEvictionRun=3
-               testOnBorrow=true
-               testWhileIdle=true
-               testOnReturn=true
-               validationQuery="SELECT 1"
-            }
+      grails {
+        mongo {
+          hostname = 'localhost'
+          port = 27017
+          databaseName = 'cloudnotes'
         }
+      }
     }
 }
