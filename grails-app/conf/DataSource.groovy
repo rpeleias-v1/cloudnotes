@@ -32,10 +32,13 @@ environments {
     production {
       grails {
         mongo {
-          hostname = 'localhost'
+          hostname = 'troup.mongohq.com'
+          username = "heroku"
+          username = "heroku"
           port = 27017
           databaseName = 'cloudnotes'
         }
       }
     }
 }
+  
