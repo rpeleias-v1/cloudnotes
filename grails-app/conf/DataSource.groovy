@@ -15,7 +15,7 @@ grails {
     hostname = 'troup.mongohq.com'
     username = "heroku"
     password = "heroku"
-    port = 27017
+    port = 10005
     databaseName = 'app22540875'
      options {
             autoConnectRetry = true
