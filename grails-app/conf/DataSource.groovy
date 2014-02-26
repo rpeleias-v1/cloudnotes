@@ -16,7 +16,7 @@ grails {
     username = "heroku"
     username = "heroku"
     port = 27017
-    databaseName = 'app22540875'
+    databaseName = 'cloudnotes'
      options {
             autoConnectRetry = true
             connectTimeout = 300
