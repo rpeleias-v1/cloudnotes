@@ -14,9 +14,9 @@ grails {
   mongo {
     hostname = 'troup.mongohq.com'
     username = "heroku"
-    username = "heroku"
+    password = "heroku"
     port = 27017
-    databaseName = 'cloudnotes'
+    databaseName = 'app22540875'
      options {
             autoConnectRetry = true
             connectTimeout = 300
