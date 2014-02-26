@@ -9,36 +9,26 @@ hibernate {
     cache.use_query_cache = false
     cache.region.factory_class = 'net.sf.ehcache.hibernate.EhCacheRegionFactory'
 }
+
+grails {
+  mongo {
+    hostname = 'troup.mongohq.com'
+    username = "heroku"
+    username = "heroku"
+    port = 27017
+    databaseName = 'cloudnotes'
+  }
+}
 // environment specific settings
 environments {    
     development {
-      grails {
-        mongo {
-          hostname = 'localhost'
-          port = 27017
-          databaseName = 'cloudnotes'
-        }
-      }
+      
     }
     test {
-      grails {
-        mongo {
-          hostname = 'localhost'
-          port = 27017
-          databaseName = 'cloudnotes'
-        }
-      }
+      
     }
     production {
-      grails {
-        mongo {
-          hostname = 'troup.mongohq.com'
-          username = "heroku"
-          username = "heroku"
-          port = 27017
-          databaseName = 'cloudnotes'
-        }
-      }
+      
     }
 }
   
