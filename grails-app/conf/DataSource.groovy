@@ -17,6 +17,10 @@ grails {
     username = "heroku"
     port = 27017
     databaseName = 'app22540875'
+     options {
+            autoConnectRetry = true
+            connectTimeout = 300
+        }
   }
 }
 // environment specific settings
