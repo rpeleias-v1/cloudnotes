@@ -16,7 +16,7 @@ grails {
     username = "heroku"
     username = "heroku"
     port = 27017
-    databaseName = 'cloudnotes'
+    databaseName = 'app22540875'
   }
 }
 // environment specific settings
