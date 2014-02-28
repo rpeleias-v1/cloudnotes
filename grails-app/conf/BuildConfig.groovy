@@ -57,9 +57,8 @@ grails.project.dependency.resolution = {
 
         compile ':cache:1.0.1'
         if (Environment.current == Environment.PRODUCTION) {
-            compile ':webxml:1.4.1'
             compile ':cloud-support:1.0.8'
-            compile(':heroku:1.0.1') 
+            compile ':heroku:1.0.1' 
         }
     }
 }
