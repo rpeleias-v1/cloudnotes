@@ -37,6 +37,7 @@ grails.project.dependency.resolution = {
 
         // runtime 'mysql:mysql-connector-java:5.1.22'
         //runtime 'postgresql:postgresql:9.0-801.jdbc4' 
+        runtime 'commons-email:commons-email:1.1'
     }
 
     plugins {
