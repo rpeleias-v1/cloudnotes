@@ -17,8 +17,8 @@ environments {
       grails {
         mongo {
           host = 'troup.mongohq.com'
-          username = "heroku"
-          password = "heroku"
+          username = "master"
+          password = "master"
           port = 10005
           databaseName = 'app22540875'
            options {
