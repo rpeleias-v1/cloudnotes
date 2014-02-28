@@ -12,7 +12,7 @@ hibernate {
 
 grails {
   mongo {
-    hostname = 'troup.mongohq.com'
+    host = 'troup.mongohq.com'
     username = "heroku"
     password = "heroku"
     port = 10005
