@@ -16,15 +16,17 @@ environments {
     development {
       grails {
         mongo {
-          host = 'troup.mongohq.com'
-          username = "heroku"
-          password = "heroku"
-          port = 10005
-          databaseName = 'app22540875'
-           options {
-                  autoConnectRetry = true
-                  connectTimeout = 300
-              }
+          url =  System.env.MONGOHQ_URL
+          pooled = true
+          options {
+              autoConnectRetry = true
+              connectTimeout = 3000
+              connectionsPerHost = 500
+              socketTimeout = 60000
+              threadsAllowedToBlockForConnectionMultiplier = 5
+              maxAutoConnectRetryTime=2
+              maxWaitTime=120000
+          }   
         }
       }     
     }
@@ -54,7 +56,7 @@ environments {
               connectionsPerHost = 500
               socketTimeout = 60000
               threadsAllowedToBlockForConnectionMultiplier = 5
-              maxAutoConnectRetryTime=5
+              maxAutoConnectRetryTime=2
               maxWaitTime=120000
           }   
         }
