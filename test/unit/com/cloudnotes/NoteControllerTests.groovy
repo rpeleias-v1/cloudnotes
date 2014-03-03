@@ -57,4 +57,29 @@ class NoteControllerTests {
     	assert updatedNote.userCode == "testController"
     	assert updatedNote.content == "Test Content"
     }
+
+    void testCodeChanged() {
+        Note note = new Note(userCode: 'testController')
+        note.save()
+
+        controller.params.code = "testController"
+        controller.params.newCode = "newCode"
+        controller.changeCode()
+        assert response.redirectedUrl == '/newCode'
+        assert controller.flash.message == null
+    }
+
+    void testExistedCode() {
+        Note note = new Note(userCode: 'testController')
+        note.save()
+
+        Note existedCode = new Note(userCode: 'existedCode')
+        existedCode.save()
+
+        controller.params.code = "testController"
+        controller.params.newCode = "existedCode"
+        controller.changeCode()
+        assert response.redirectedUrl != '/newCode'
+        assert controller.flash.message != null
+    }
 }

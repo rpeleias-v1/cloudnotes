@@ -14,7 +14,7 @@
 			<div class="collapse navbar-collapse">
 				<ul class="nav navbar-nav">
 					<li><a href="https://github.com/rpeleias/cloudnotes" target="_blank">Source Code</a></li>	
-					<li><g:link action="contact" controller="contact">Contact Me</g:link></li>			
+					<li><g:link action="contact" controller="contact" params="[code: params.code]">Contact Me</g:link></li>			
 				</ul>
 			</div>
 		</div>

@@ -31,15 +31,9 @@ environments {
     test {
       grails {
         mongo {
-          host = 'troup.mongohq.com'
-          username = "heroku"
-          password = "heroku"
-          port = 10005
-          databaseName = 'app22540875'
-           options {
-                  autoConnectRetry = true
-                  connectTimeout = 300
-              }
+          hostname = 'localhost'          
+          port = 27017
+          databaseName = 'app22540875'           
         }
       }     
     }

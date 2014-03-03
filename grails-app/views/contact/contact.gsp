@@ -16,7 +16,7 @@
 			</ul>
 		</g:hasErrors>
 
-		<g:form action="save">
+		<g:form action="save" controller="contact">
 			
 			<div class="input-group ">
 				<table>
