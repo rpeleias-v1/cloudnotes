@@ -15,16 +15,31 @@
 
 	<div class="buttons-area">
 		<g:submitButton id="cleanButton" name="Clean" class="btn btn-lg btn-info" >Clean</g:submitButton>			
-		<g:remoteLink id="changeIdButton" class="btn btn-lg btn-info" >Change ID</g:remoteLink>	
+		<button id="changeIdButton" class="btn btn-lg btn-info" >
+			Change ID
+		</button>	
 	</div>	
 
-	<div id="changeIdTemplate">
-	</div>
-	
+	<div id="change-code" title="Dialog Title" style="display:none"> 
+		<g:form name="myForm" url="[controller: 'note', action: 'changeCode', params: [userCode: note.userCode]]" >
+			<g:textField name="newCode" value="${newCode}" />
+
+			<g:submitButton id="changeCode" name="Change" class="btn btn-lg btn-info" >Change</g:submitButton>
+		</g:form>
+	</div>  
+   
 	<r:script>
 		$('#cleanButton').click(function() {
 			document.getElementById('noteArea').value = ""; return false;
-		});		
+		});
+
+		$(document).ready(function () {
+		    $('#changeIdButton').click(function () {
+		        $('#change-code').dialog();
+		        return false;
+		    });
+		});
+		
 	</r:script>
 	
 </body>

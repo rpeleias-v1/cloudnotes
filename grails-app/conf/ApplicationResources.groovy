@@ -6,4 +6,8 @@ modules = {
     custom {
         resource url:'css/jumbotron.css'
     }
+
+    jquerygrails {
+    	dependsOn 'jquery, jquery-ui'
+    }
 }

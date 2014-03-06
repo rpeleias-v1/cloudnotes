@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
    <head>        	  
-      <r:require modules="bootstrap, custom"/>      
+      <r:require modules="bootstrap, custom, jquerygrails"/>      
       <g:layoutTitle/>
       <r:layoutResources/>
    </head>

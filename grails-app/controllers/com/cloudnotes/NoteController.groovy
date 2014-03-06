@@ -35,15 +35,11 @@ class NoteController {
     	note.save()	    
     }
 
-    def renderChangeArea() {
-
-    }
-
     def changeCode() {
-        Note note = Note.findByUserCode(params.code)
+        Note note = Note.findByUserCode(params.userCode)
         note.userCode = params.newCode
         if (!note.save()) {
-            flash.message = message(code: 'default.message.codenotfound')
+            flash.message = message(code: 'existedCode')
             redirect(action: 'index')
             return
         }
