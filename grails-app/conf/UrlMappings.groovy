@@ -8,7 +8,7 @@ class UrlMappings {
 		}
 
 		"/$code?"(controller: "note", action: "index")
-		"/contact/$code?"(controller: "contact", action: "contact")
+		//"/contact/$code?"(controller: "contact", action: "contact")
 		"500"(view:'/error')
 	}
 }

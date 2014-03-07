@@ -37,12 +37,12 @@ class NoteController {
 
     def changeCode() {
         Note note = Note.findByUserCode(params.userCode)
+        println "Note = " + note
         note.userCode = params.newCode
         if (!note.save()) {
-            flash.message = message(code: 'existedCode')
-            redirect(action: 'index')
+            render(text: message(code: 'default.message.existedCode'))
             return
         }
-        redirect(uri: "/${note.userCode}", controller: 'note', action: 'index', params:[code: note.userCode])
+        forward(uri: "/${note.userCode}", controller: 'note', action: 'index', params:[code: note.userCode])
     } 
 }
