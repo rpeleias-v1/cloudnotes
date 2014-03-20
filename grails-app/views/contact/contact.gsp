@@ -16,25 +16,27 @@
 			</ul>
 		</g:hasErrors>
 
-		<g:form action="save" controller="contact">
+		<g:form action="save" controller="contact" class="form-horizontal" >
 			
 			<div class="input-group ">
-				<table>
-					<tr>
-						<td><label for="userName">Name</label></td>
-						<td><g:textField name="userName" value="${contact.userName}" class="form-control pull-left" required="true"/></td>	
-					</tr>
-					<br/>
-					<tr>
-						<td><label for="email">Email </label></td>
-						<td><g:textField name="email" value="${contact.email}" class="form-control pull-left" required="true" /></td>
-					</tr>
-					<br/>
-					<tr>
-						<td><label for="content">Content </label></td>
-						<td><g:textArea cols="100" rows="10" name="content" value="${contact.content}" class="form-control pull-left" required="true" /></td>
-					</tr>
-				</table>
+				<div class="form-group">
+					<label for="userName" class="col-sm-2 control-label" >Name</label>
+					<div class="col-sm-10">
+						<g:textField name="userName" value="${contact.userName}" class="form-control pull-left" required="true"/>
+					</div>	
+				</div>
+				<div class="form-group">
+					<label for="email" class="col-sm-2 control-label" >Email </label>
+					<div class="col-sm-10">
+						<g:textField name="email" value="${contact.email}" class="form-control pull-left" required="true" />
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="content" class="col-sm-2 control-label" >Content </label>
+					<div class="col-sm-10">
+						<g:textArea cols="100" rows="10" name="content" value="${contact.content}" class="form-control pull-left" required="true" />
+					</div>
+				</div>				
 			</div>			
 
 			<div class="buttons-area">
