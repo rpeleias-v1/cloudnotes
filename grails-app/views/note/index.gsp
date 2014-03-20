@@ -16,42 +16,35 @@
 
 	<div class="buttons-area">
 		<g:submitButton id="cleanButton" name="Clean" class="btn btn-lg btn-info" >Clean</g:submitButton>			
-		<button id="changeIdButton" class="btn btn-lg btn-info" >
+		<button class="btn btn-lg btn-info" data-toggle="modal" data-target="#myModal">
 			Change ID
 		</button>	
 	</div>	
-
-	<div id="change-code" title="Change Your Notes ID" style="display:none"> 		
-
-		<g:formRemote name="myForm" url="[controller: 'note', action: 'changeCode', params: [userCode: note.userCode]]" update="[success:'message']" onSuccess="${remoteFunction(action: 'index', controller: 'note')}">
-
-			<div id="message" > 
-			</div>			
-			
-			<g:textField name="newCode" value="${newCode}" />
-
-			<g:submitButton id="changeCode" name="Change" class="btn btn-lg btn-info">Change</g:submitButton>
-		</g:formRemote>
-	</div>  
-   
-	<r:script>
-		$('#cleanButton').click(function() {
-			document.getElementById('noteArea').value = ""; return false;
-		});
-
-		$(document).ready(function () {
-		    $('#changeIdButton').click(function () {
-		        $('#change-code').dialog({
-		        	resizable: false,
-		        	modal: true,
-		        	width: 300,
-		        	height: 130,
-		        });
-		        return false;
-		    });
-		});
-		
-	</r:script>
 	
+
+	<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	  <div class="modal-dialog">
+	    <div class="modal-content">
+    	  <div class="modal-header">
+	        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+	        <h4 class="modal-title" id="myModalLabel">Change Code</h4>
+	      </div>
+
+	      <g:formRemote name="myForm" url="[controller: 'note', action: 'changeCode', params: [userCode: note.userCode]]" update="[success:'message']">
+		      <div class="modal-body">
+			      <div id="message" > 
+				  </div>			
+					
+				   <g:textField name="newCode" value="${newCode}" />
+			       
+		      </div>
+		      <div class="modal-footer">
+		        <button type="button" class="btn btn-lg btn-info" data-dismiss="modal">Close</button>
+		        <g:submitButton id="changeCode" name="Change" class="btn btn-lg btn-info">Change</g:submitButton>
+		      </div>
+	      </g:formRemote>		   
+	    </div>
+	  </div>
+	</div>  	
 </body>
 </html>

@@ -9,7 +9,7 @@ class Contact {
 	String content
 
     static constraints = {	
-    	email(blank: false, nullable: true, email: true, unique: true) 
+    	email(blank: false, nullable: true, email: true) 
     	userName(blank: false, nullable: true)
     	content(blank: false, nullable: true)
     }

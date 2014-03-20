@@ -43,6 +43,8 @@ class NoteController {
             render(text: message(code: 'default.message.existedCode'))
             return
         }
-        forward(uri: "/${note.userCode}", controller: 'note', action: 'index', params:[code: note.userCode])
+        def url = createLink(uri: "/${note.userCode}", controller: 'note', action: 'index', params:[code: note.userCode])
+        render(contentType: 'text/html', text: "<script>window.location.href='$url'</script>")
+        //redirect(uri: "/${note.userCode}", controller: 'note', action: 'index', params:[code: note.userCode])
     } 
 }
