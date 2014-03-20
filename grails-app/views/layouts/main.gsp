@@ -9,7 +9,7 @@
    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
 		<div class="container">
 			<div class="navbar-header">
-				<a class="navbar-brand" href="#">Cloud Notes</a>
+				<<g:link class="navbar-brand" action="index" controller="note" params="[code: params.code]">Cloud Notes</g:link>					
 			</div>
 			<div class="collapse navbar-collapse">
 				<ul class="nav navbar-nav">
@@ -26,6 +26,6 @@
    </body>
 
    <footer>
-		<p>Developed and mantained by @rpeleias. All rigths reserved.</p>
+		<p>Developed and mantained by @rpeleias. Fork it on GitHub!.</p>
 	</footer>
 </html>
