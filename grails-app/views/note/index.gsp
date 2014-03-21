@@ -27,16 +27,19 @@
 	    <div class="modal-content">
     	  <div class="modal-header">
 	        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-	        <h4 class="modal-title" id="myModalLabel">Change Code</h4>
+	        <h4 class="modal-title" id="myModalLabel">Change Identification Code</h4>
 	      </div>
 
 	      <g:formRemote name="myForm" url="[controller: 'note', action: 'changeCode', params: [userCode: note.userCode]]" update="[success:'message']">
-		      <div class="modal-body">
-			      <div id="message" > 
-				  </div>			
-					
-				   <g:textField name="newCode" value="${newCode}" />
-			       
+		      <div class="modal-body">			      
+					<div class="form-group">
+						<div id="message" > 
+				  		</div>	
+						<label for="userName" class="col-sm-2 control-label" >New Id</label>
+						<div class="col-sm-10">
+							<g:textField name="newCode" class="form-control pull-left"  value="${newCode}" />
+						</div>	
+					</div>												  			       
 		      </div>
 		      <div class="modal-footer">
 		        <button type="button" class="btn btn-lg btn-info" data-dismiss="modal">Close</button>

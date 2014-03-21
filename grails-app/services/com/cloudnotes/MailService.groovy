@@ -6,10 +6,10 @@ class MailService {
 
 	boolean transaction = false
 
-    String host= "xxx"
-	String username = "xxx"
-	String password = "xxx"
-	String from = "xxx"
+    String host= "smtp.googlemail.com"
+	String username = "rodrigo.peleias@gmail.com"
+	String password = "cabeca"
+	String from = "rodrigo.peleias@gmail.com"
 	Integer port = 465
 	 
 	def send(String subject, String msg, String to) {
