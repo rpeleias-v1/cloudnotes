@@ -48,7 +48,7 @@ class NoteControllerTests {
     void testUpdateNotes() {
     	Note note = new Note(userCode: 'testController')
     	note.save()
-
+        println note.id
     	controller.params.id = "testController"
     	controller.params.content = "Test Content"
     	def updatedNote = controller.updateNote()
@@ -62,11 +62,10 @@ class NoteControllerTests {
         Note note = new Note(userCode: 'testController')
         note.save()
 
-        controller.params.code = "testController"
+        controller.params.userCode = "testController"
         controller.params.newCode = "newCode"
         controller.changeCode()
-        assert response.redirectedUrl == '/newCode'
-        assert controller.flash.message == null
+        assert response.text.contains('/newCode')       
     }
 
     void testExistedCode() {
@@ -76,10 +75,9 @@ class NoteControllerTests {
         Note existedCode = new Note(userCode: 'existedCode')
         existedCode.save()
 
-        controller.params.code = "testController"
+        controller.params.userCode = "testController"
         controller.params.newCode = "existedCode"
         controller.changeCode()
-        assert response.redirectedUrl != '/newCode'
-        assert controller.flash.message != null
+        assert response.text.contains('default.message.existedCode')
     }
 }

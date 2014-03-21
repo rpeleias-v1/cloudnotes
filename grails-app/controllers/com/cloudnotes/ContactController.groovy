@@ -9,8 +9,7 @@ class ContactController {
     	[contact: contact]        
     }
 
-    def save()  {
-        println "Entrou"
+    def save()  {     
     	def contact = new Contact(params)    
     	if (!contact.save(flush: true)) {
     		render (view: 'contact', model: [contact: contact])
