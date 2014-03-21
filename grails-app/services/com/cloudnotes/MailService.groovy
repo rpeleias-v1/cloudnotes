@@ -6,25 +6,25 @@ class MailService {
 
 	boolean transaction = false
 
-    String host= "smtp.googlemail.com"
-	String username = "rodrigo.peleias@gmail.com"
-	String password = "cabeca"
-	String from = "rodrigo.peleias@gmail.com"
+    String host= "smtp.gmail.com"
+	String username = "mycloudnotes.rpeleias@gmail.com"
+	String password = "cloudnotes123"
+	String from = "mycloudnotes.rpeleias@gmail.com"
 	Integer port = 465
 	 
 	def send(String subject, String msg, String to) {
 		SimpleEmail email = new SimpleEmail()
-		email.setHostName(host)
-		email.addTo(to)
-		email.setFrom(from)
-		email.setSubject(subject)
-		email.setMsg(msg)
-
-		email.setAuthentication(username,password)
-
-		email.setSmtpPort(port)
-
-		println email
-		email.send()
+		email.with {
+			setHostName(host)
+			addTo(to)
+			setFrom(from)
+			setSubject(subject)
+			setMsg(msg)
+			setSSL(true)
+			setTLS(true);
+			setAuthentication(username,password)
+			setSmtpPort(port)
+			send()
+		}		
 	}
 }
