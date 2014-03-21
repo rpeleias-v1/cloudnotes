@@ -6,8 +6,8 @@
 <body>	
 	
 	<div class="starter-template" style="float:center;">
-		<h2> Contact Me!</h2>
-		<p>If you have any problems or suggestions, feel free!</p>
+		<h2><g:message code="default.contact.title" /></h2>
+		<p><g:message code="default.contact.subtitle" /></p>
 		<g:hasErrors bean="${contact}">
 			<ul class="errors" role="alert">
 				<g:eachError bean="${contact}" var="error">
@@ -24,19 +24,19 @@
 			
 			<div class="input-group ">
 				<div class="form-group">
-					<label for="userName" class="col-sm-2 control-label" >Name</label>
+					<label for="userName" class="col-sm-2 control-label" ><g:message code="default.contact.name" /></label>
 					<div class="col-sm-10">
 						<g:textField name="userName" value="${contact.userName}" class="form-control pull-left" required="true"/>
 					</div>	
 				</div>
 				<div class="form-group">
-					<label for="email" class="col-sm-2 control-label" >Email </label>
+					<label for="email" class="col-sm-2 control-label" ><g:message code="default.contact.email" /></label>
 					<div class="col-sm-10">
 						<g:textField name="email" value="${contact.email}" class="form-control pull-left" required="true" />
 					</div>
 				</div>
 				<div class="form-group">
-					<label for="content" class="col-sm-2 control-label" >Content </label>
+					<label for="content" class="col-sm-2 control-label" ><g:message code="default.contact.content" /></label>
 					<div class="col-sm-10">
 						<g:textArea cols="100" rows="10" name="content" value="${contact.content}" class="form-control pull-left" required="true" />
 					</div>
@@ -44,7 +44,7 @@
 			</div>			
 
 			<div class="buttons-area">
-				<g:submitButton id="submitEmail" name="Send Email" class="btn btn-lg btn-info" />							
+				<g:submitButton id="submitEmail" name="sendEmail" value="${message(code: 'default.contact.sendemail')}" class="btn btn-lg btn-info" />							
 			</div>	
 
 		</g:form>		
